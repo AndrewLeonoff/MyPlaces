@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Сыроварня.png",
+      "filename" : "MyPlaces.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Сыроварня@2x.png",
+      "filename" : "MyPlaces@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Сыроварня@3x.png",
+      "filename" : "MyPlaces@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
