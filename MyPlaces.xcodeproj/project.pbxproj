@@ -17,6 +17,7 @@
 		B65E04AD2A0EF674006DDDD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65E04AB2A0EF674006DDDD8 /* Main.storyboard */; };
 		B65E04AF2A0EF675006DDDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65E04AE2A0EF675006DDDD8 /* Assets.xcassets */; };
 		B65E04B22A0EF675006DDDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65E04B02A0EF675006DDDD8 /* LaunchScreen.storyboard */; };
+		B6AD86532A1D44A20022766D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD86522A1D44A20022766D /* RatingControl.swift */; };
 		B6F105062A103D7E002A23BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F105052A103D7E002A23BE /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		B65E04AE2A0EF675006DDDD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65E04B12A0EF675006DDDD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65E04B32A0EF675006DDDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6AD86522A1D44A20022766D /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		B6F105052A103D7E002A23BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4A476151389A58734771F4D /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 				B65D62FD2A13E74F0077A256 /* PlaceModel.swift */,
 				B64CC4222A1906910036FAAA /* StorageManager.swift */,
 				B64FC1D92A13ABD000EF15B4 /* CustomTableViewCell.swift */,
+				B6AD86522A1D44A20022766D /* RatingControl.swift */,
 				B65E04AB2A0EF674006DDDD8 /* Main.storyboard */,
 				B65E04AE2A0EF675006DDDD8 /* Assets.xcassets */,
 				B65E04B02A0EF675006DDDD8 /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 				B60A08CA2A15658E00045466 /* NewPlaceViewController.swift in Sources */,
 				B65E04A62A0EF674006DDDD8 /* AppDelegate.swift in Sources */,
 				B64CC4232A1906910036FAAA /* StorageManager.swift in Sources */,
+				B6AD86532A1D44A20022766D /* RatingControl.swift in Sources */,
 				B65D62FE2A13E74F0077A256 /* PlaceModel.swift in Sources */,
 				B64FC1DA2A13ABD000EF15B4 /* CustomTableViewCell.swift in Sources */,
 				B65E04A82A0EF674006DDDD8 /* SceneDelegate.swift in Sources */,
