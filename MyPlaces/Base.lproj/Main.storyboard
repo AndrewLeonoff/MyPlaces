@@ -235,13 +235,27 @@
                                     <action selector="closeVS" destination="iuw-XK-FsK" eventType="touchUpInside" id="syL-nd-GDM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moi-6J-ykc">
+                                <rect key="frame" x="303" y="752" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="kXa-j5-9So"/>
+                                    <constraint firstAttribute="height" constant="50" id="qHq-uS-Plv"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="iuw-XK-FsK" eventType="touchUpInside" id="fIn-b0-Z27"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CcJ-Yj-tdO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fK8-qU-f5e" firstAttribute="top" secondItem="CcJ-Yj-tdO" secondAttribute="top" constant="40" id="5fS-Dm-LXQ"/>
                             <constraint firstItem="Q2Y-iA-j6K" firstAttribute="top" secondItem="tce-tV-jvZ" secondAttribute="top" id="6Gd-Mh-eeg"/>
+                            <constraint firstItem="CcJ-Yj-tdO" firstAttribute="bottom" secondItem="moi-6J-ykc" secondAttribute="bottom" constant="40" id="Sj6-fA-GHd"/>
                             <constraint firstAttribute="bottom" secondItem="Q2Y-iA-j6K" secondAttribute="bottom" id="ZVI-2y-GKl"/>
+                            <constraint firstItem="CcJ-Yj-tdO" firstAttribute="trailing" secondItem="moi-6J-ykc" secondAttribute="trailing" constant="40" id="bqh-ye-oxC"/>
                             <constraint firstItem="Q2Y-iA-j6K" firstAttribute="leading" secondItem="CcJ-Yj-tdO" secondAttribute="leading" id="nf9-Tv-mkz"/>
                             <constraint firstItem="Q2Y-iA-j6K" firstAttribute="trailing" secondItem="CcJ-Yj-tdO" secondAttribute="trailing" id="pgQ-a6-b7u"/>
                             <constraint firstItem="CcJ-Yj-tdO" firstAttribute="trailing" secondItem="fK8-qU-f5e" secondAttribute="trailing" constant="40" id="yEL-2S-oxE"/>
@@ -471,6 +485,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="cancel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
