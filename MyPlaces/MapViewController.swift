@@ -7,11 +7,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
     var place = Place()
     let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
 
     @IBOutlet var mapView: MKMapView!
     
@@ -19,6 +21,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServices()
     }
     
     @IBAction func closeVS() {
@@ -54,6 +57,60 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func checkLocationServices() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Location Services are disabled",
+                    message: "Go to Settings > Privacy & Security > Location Services"
+                )
+            }
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization() {
+        let manager = CLLocationManager()
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Your location is not available",
+                    message: "Go to Settings > MyPlaces > Location"
+                )
+            }
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("A new case is available")
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -79,5 +136,12 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
     }
 }
