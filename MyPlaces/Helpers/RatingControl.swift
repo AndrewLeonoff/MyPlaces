@@ -46,10 +46,8 @@ import UIKit
     // MARK: - Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
-        
         guard let index = ratingButtons.firstIndex(of: button) else { return }
         
-        // Calculate the rating of the selected button
         let selectedRating = index + 1
         
         if selectedRating == rating {
@@ -70,7 +68,6 @@ import UIKit
         
         ratingButtons.removeAll()
         
-        // Load button image
         let bundle = Bundle(for: type(of: self))
         
         let filledStar = UIImage(named: "filledStar",
@@ -89,27 +86,21 @@ import UIKit
         
         for _ in 0..<starCount {
             
-            // Create the button
             let button = UIButton()
             
-            // Set the button image
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
             button.setImage(highlightedStar, for: .highlighted)
             button.setImage(highlightedStar, for: [.highlighted, .selected])
             
-            // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
             button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
             
-            // Setup the button action
             button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)
             
-            // Add the button to the stack
             addArrangedSubview(button)
             
-            // Add the new button on the rating button array
             ratingButtons.append(button)
         }
         

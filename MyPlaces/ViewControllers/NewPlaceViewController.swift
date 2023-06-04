@@ -23,16 +23,25 @@ class NewPlaceViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
-                                                         y: 0,
-                                                         width: tableView.frame.size.width,
-                                                         height: 1))
         saveButton.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
     }
     
     // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let isLastCell = indexPath.row == 4
+        let defaultInset = tableView.separatorInset
+        
+        if isLastCell {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.width, bottom: 0, right: 0)
+        } else {
+            cell.separatorInset = defaultInset
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
@@ -147,6 +156,7 @@ class NewPlaceViewController: UITableViewController {
 }
 
 // MARK: - Text field delegate
+
 extension NewPlaceViewController: UITextFieldDelegate {
     
     // Скрываем клавиатуру по нажатию на Done
@@ -167,6 +177,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
 }
 
 // MARK: - Work with image
+
 extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
